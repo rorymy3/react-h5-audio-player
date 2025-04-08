@@ -116,15 +116,21 @@ The `controls` attribute defaults to `false` and should never be changed to `tru
 | footer                   | ReactNode         | null    | Footer of the audio player |
 | layout                   | 'stacked' \| 'horizontal' \|<br>'stacked-reverse' \|<br>'horizontal-reverse' | 'stacked' | [Overall layout](https://lhz516.github.io/react-h5-audio-player/?path=/docs/layouts-advanced) of the audio player |
 | customIcons              | [CustomIcons](https://github.com/lhz516/react-h5-audio-player/blob/fa1a61eb7f77146e1ce4547a14181279be68ecfd/src/index.tsx#L99) | {}      | [Custom icons](https://lhz516.github.io/react-h5-audio-player/?path=/docs/layouts--custom-icons) to replace the default ones |
-| customProgressBarSection | [Array<string \|<br>ReactElement>](https://github.com/lhz516/react-h5-audio-player/blob/fa1a61eb7f77146e1ce4547a14181279be68ecfd/src/index.tsx#L91) | [CURRENT_TIME,<br>PROGRESS_BAR,<br>DURATION] | [Custom layout](https://lhz516.github.io/react-h5-audio-player/?path=/docs/layouts-advanced) of progress bar section |
-| customControlsSection    | [Array<string \|<br>ReactElement>](https://github.com/lhz516/react-h5-audio-player/blob/fa1a61eb7f77146e1ce4547a14181279be68ecfd/src/index.tsx#L92) | [ADDITIONAL_CONTROLS,<br>MAIN_CONTROLS,<br>VOLUME_CONTROLS] | [Custom layout](https://lhz516.github.io/react-h5-audio-player/?path=/docs/layouts-advanced) of controls section |
-| customAdditionalControls | [Array<string \|<br>ReactElement>](https://github.com/lhz516/react-h5-audio-player/blob/fa1a61eb7f77146e1ce4547a14181279be68ecfd/src/index.tsx#L93) | [LOOP] | [Custom layout](https://lhz516.github.io/react-h5-audio-player/?path=/docs/layouts-advancedd) of additional controls |
-| customVolumeControls     | [Array<string \|<br>ReactElement>](https://github.com/lhz516/react-h5-audio-player/blob/fa1a61eb7f77146e1ce4547a14181279be68ecfd/src/index.tsx#L94) | [VOLUME] | [Custom layout](https://lhz516.github.io/react-h5-audio-player/?path=/docs/layouts-advanced) of volume controls |
+| customMainContainerLeft  | Array<string \|<br>ReactElement> | [] | Custom layout of the left side of the audio player's container
+| customMainContainerRight | Array<string \|<br>ReactElement> | [] | Custom layout of the left side of the audio player's container
+| customProgressBarSectionContainer | Array<string \|<br>ReactElement> | [] | Custom layout of the progress bar's flex container
+| customProgressBarSectionAbove | Array<string \|<br>ReactElement> | [CURRENT_TIME, <br>PROGRESS_DIV, <br>DURATION] | Custom layout for the space above the progress bar
+| customProgressBarSection | Array<string \|<br>ReactElement> | [PROGRESS_BAR] | Custom layout for the progress bar |
+| customControlsSection    | Array<string \|<br>ReactElement> | [ADDITIONAL_CONTROLS,<br>MAIN_CONTROLS,<br>VOLUME_CONTROLS] | Custom layout of controls section |
+| customAdditionalControls | Array<string \|<br>ReactElement> | [LOOP] | Custom layout of additional controls |
+| customVolumeControls     | Array<string \|<br>ReactElement> | [VOLUME] | Custom layout of volume controls |
 | i18nAriaLabels           | [I18nAriaLabels](https://github.com/lhz516/react-h5-audio-player/blob/e67fe0cdd39d00490b7396ebdc46357815ecb227/src/index.tsx#L138)| [I18nAriaLabels](https://github.com/lhz516/react-h5-audio-player/blob/e67fe0cdd39d00490b7396ebdc46357815ecb227/src/index.tsx#L183) | A configuration object to overwrite the default `aria-label` on the action buttons |
 | mse                      | Object           | null     | A configuration object so the player can play audio chunks, MSE streams and encrypted audio (See [section about Media Source Extensions](#media-source-extensions-and-encrypted-media-extensions) in this Readme) |
 | mse.srcDuration          | number           | -        | The complete duration of the MSE audio chunks together (this is a key of the _mse_ prop) |
 | mse.onSeek               | Function (Event) | -        | The callback to be used when seek happens (this is a key of the _mse_ prop) |
 | mse.srcDuration          | number           | -        | The callback to be used when encrypted audio is detected and needs to be decrypted (this is a key of the _mse_ prop) |
+
+See [original repo's demo](https://lhz516.github.io/react-h5-audio-player/) for more examples. All new custom containers follow the same logic.
 
 ### Event Props
 
