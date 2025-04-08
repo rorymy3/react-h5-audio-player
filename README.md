@@ -2,7 +2,7 @@
   <img alt="logo" src="./assets/logo.png" width="100" max-width="100%">
 </p>
 
-<h1 align="center">React H5 Audio Player</h1>
+<h1 align="center">React H5 Audio Player (+ Customizing)</h1>
 
 <div align="center">
   <a href="https://www.npmjs.com/package/react-h5-audio-player" title="MIT License">
@@ -25,11 +25,11 @@
 
 ![screenshot](./assets/screenshot.png)
 
-Live Demo: [Storybook](https://lhz516.github.io/react-h5-audio-player/)
-
-Try it on CodePen: [Basic](https://codepen.io/lhz516/pen/dyGpmgP), [Playlist](https://codepen.io/lhz516/pen/ZExvXjx)
-
 Supported browsers: Chrome, Firefox, Safari, Edge
+
+## What's different in this fork:
+
+More options for customization have been added. Add custom components to the progress bar, or to the left or right of the whole player. This makes it significantly easier to add images and other text *inside* the audio player. For examples, look at the storyboards with `$ npm run storyboards`.
 
 ## [Migrate from v2.x to v3](https://github.com/lhz516/react-h5-audio-player/releases/tag/v3.0.0)
 
