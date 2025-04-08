@@ -24,6 +24,26 @@ $rhap_font-family: inherit !default;
   }
 }
 
+.rhap_main-container {
+  display: flex;
+  flex: auto 3 1;
+  align-content: center;
+  padding: 0 10px;
+}
+
+.rhap_main-container-left {
+  flex: 0 0 1;
+}
+
+.rhap_main-container-center {
+  flex: 1 1 auto;
+}
+
+.rhap_main-container-right {
+  padding-left: 5%;
+  flex: 0 0 1;
+}
+
 .rhap_header {
   margin-bottom: 10px;
 }
@@ -74,6 +94,12 @@ $rhap_font-family: inherit !default;
   align-items: center;
 }
 
+.rhap_progress-section-above {
+  display: flex;
+  flex: 3 1 auto;
+  align-items: center;
+}
+
 .rhap_progress-container {
   display: flex;
   align-items: center;
@@ -97,6 +123,17 @@ $rhap_font-family: inherit !default;
   -webkit-user-select: none;
 }
 
+.rhap_progress-section-container {
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rhap_progress-section-bar-container {
+  width: 100%;
+}
+
 .rhap_progress-bar {
   box-sizing: border-box;
   position: relative;
@@ -113,6 +150,10 @@ $rhap_font-family: inherit !default;
   z-index: 2;
   background-color: $rhap_theme-color;
   border-radius: 2px;
+}
+
+.rhap_progress-div {
+  width: 100%;
 }
 
 .rhap_progress-bar-show-download {
@@ -142,7 +183,7 @@ $rhap_font-family: inherit !default;
 
 .rhap_controls-section {
   display: flex;
-  flex: 1 1 auto;
+  flex: auto;
   justify-content: space-between;
   align-items: center;
 }

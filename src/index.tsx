@@ -103,7 +103,11 @@ interface PlayerProps {
   footer?: ReactNode
   customIcons?: CustomIcons
   layout?: MAIN_LAYOUT
+  customMainContainerLeft?: CustomUIModules
+  customMainContainerRight?: CustomUIModules
+  customProgressBarSectionContainer?: CustomUIModules
   customProgressBarSection?: CustomUIModules
+  customProgressBarSectionAbove?: CustomUIModules
   customControlsSection?: CustomUIModules
   customAdditionalControls?: CustomUIModules
   customVolumeControls?: CustomUIModules
@@ -397,6 +401,11 @@ class H5AudioPlayer extends Component<PlayerProps> {
             i18nProgressBar={i18nAriaLabels.progressControl}
           />
         )
+      case RHAP_UI.PROGRESS_DIV:
+        return (
+          <div key={key} className="rhap_progress-div">
+          </div>
+        )
       case RHAP_UI.DURATION:
         return (
           <div key={key} className="rhap_time rhap_total-time">
@@ -677,7 +686,11 @@ class H5AudioPlayer extends Component<PlayerProps> {
       header,
       footer,
       layout = 'stacked',
-      customProgressBarSection = [RHAP_UI.CURRENT_TIME, RHAP_UI.PROGRESS_BAR, RHAP_UI.DURATION],
+      customMainContainerLeft = [],
+      customMainContainerRight = [],
+      customProgressBarSectionContainer = [],
+      customProgressBarSection = [RHAP_UI.PROGRESS_BAR],
+      customProgressBarSectionAbove = [RHAP_UI.CURRENT_TIME, RHAP_UI.PROGRESS_DIV, RHAP_UI.DURATION],
       customControlsSection = [RHAP_UI.ADDITIONAL_CONTROLS, RHAP_UI.MAIN_CONTROLS, RHAP_UI.VOLUME_CONTROLS],
       children,
       style,
@@ -716,8 +729,24 @@ class H5AudioPlayer extends Component<PlayerProps> {
         </audio>
         {header && <div className="rhap_header">{header}</div>}
         <div className={`rhap_main ${getMainLayoutClassName(layout)}`}>
-          <div className="rhap_progress-section">{this.renderUIModules(customProgressBarSection)}</div>
-          <div className="rhap_controls-section">{this.renderUIModules(customControlsSection)}</div>
+          <div className="rhap_main-container">
+            <div className="rhap_main-container-left">
+              {this.renderUIModules(customMainContainerLeft)}
+            </div>
+            <div className="rhap_main-container-center">
+              <div className="rhap_progress-section-container">
+                {this.renderUIModules(customProgressBarSectionContainer)}
+                <div className="rhap_progress-section-bar-container">
+                  <div className="rhap_progress-section-above">{this.renderUIModules(customProgressBarSectionAbove)}</div>
+                  <div className="rhap_progress-section">{this.renderUIModules(customProgressBarSection)}</div>
+                </div>
+              </div>
+              <div className="rhap_controls-section">{this.renderUIModules(customControlsSection)}</div>
+            </div>
+            <div className="rhap_main-container-right">
+              {this.renderUIModules(customMainContainerRight)}
+            </div>
+          </div>
         </div>
         {footer && <div className="rhap_footer">{footer}</div>}
       </div>

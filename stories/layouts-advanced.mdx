@@ -90,6 +90,40 @@ customVolumeControls
 />
 ```
 
+#### Custom progress bar container section
+
+<Story of={LayoutsAdvancedStories.CustomProgressBarSectionContainer} />
+
+```jsx
+    <AudioPlayer
+      src={SAMPLE_MP3_URL}
+      customProgressBarSectionContainer={[
+        <img src="https://images.gamebanana.com/img/ss/mods/62fbda8a4e77e.jpg" alt="Image" style={{ marginRight: '10px', width: '50px', height: 'auto' }} />,
+        <div style={{ width: "12%" }}>
+          <div>Song Name</div>
+          <div>Artist</div>
+        </div>,
+      ]}
+    />
+```
+
+#### Custom progress bar container section
+
+<Story of={LayoutsAdvancedStories.CustomMainContainers} />
+
+```jsx
+    <AudioPlayer
+      src={SAMPLE_MP3_URL}
+      customProgressBarSectionContainer={[
+        <img src="https://images.gamebanana.com/img/ss/mods/62fbda8a4e77e.jpg" alt="Image" style={{ marginRight: '10px', width: '50px', height: 'auto' }} />,
+        <div style={{ width: "12%" }}>
+          <div>Song Name</div>
+          <div>Artist</div>
+        </div>,
+      ]}
+    />
+```
+
 #### Custom controls section
 
 <Story of={LayoutsAdvancedStories.CustomControlsSection} />
@@ -164,9 +198,6 @@ class VolumePercentage extends PureComponent<{}, { volumeText: string }> {
   src={SAMPLE_MP3_URL}
   customProgressBarSection={
     [
-      RHAP_UI.CURRENT_TIME,
-      <div>/</div>,
-      RHAP_UI.DURATION,
       RHAP_UI.PROGRESS_BAR,
       RHAP_UI.VOLUME,
     ]
@@ -182,13 +213,11 @@ class VolumePercentage extends PureComponent<{}, { volumeText: string }> {
 ```jsx
 <AudioPlayer
   src={SAMPLE_MP3_URL}
-  customProgressBarSection={
-    [
-      RHAP_UI.CURRENT_TIME,
-      RHAP_UI.PROGRESS_BAR,
-      RHAP_UI.CURRENT_LEFT_TIME,
-    ]
-  }
+  customProgressBarSectionAbove={[
+        RHAP_UI.CURRENT_TIME,
+        RHAP_UI.PROGRESS_DIV,
+        RHAP_UI.CURRENT_LEFT_TIME,
+      ]}
 />
 ```
 

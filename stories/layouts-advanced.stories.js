@@ -47,6 +47,45 @@ export const CustomProgressBarSection = {
   name: "Custom progress bar section",
 };
 
+export const CustomProgressBarSectionContainer = {
+  render: () => (
+    <AudioPlayer
+      src={SAMPLE_MP3_URL}
+      customProgressBarSectionContainer={[
+        <img src="https://images.gamebanana.com/img/ss/mods/62fbda8a4e77e.jpg" alt="Image" style={{ marginRight: '10px', width: '50px', height: 'auto' }} />,
+        <div style={{ width: "12%" }}>
+          <div>Song Name</div>
+          <div>Artist</div>
+        </div>,
+      ]}
+    />
+  ),
+
+  name: "Custom progress bar container section",
+};
+
+export const CustomMainContainers = {
+  render: () => (
+    <AudioPlayer
+      src={SAMPLE_MP3_URL}
+      customMainContainerLeft={[
+        <img src="https://images.gamebanana.com/img/ss/mods/62fbda8a4e77e.jpg" alt="Image" style={{ marginRight: '10px', width: '50px', height: 'auto' }} />,
+        <div style={{ width: "12%" }}>
+          <div>Left Side</div>
+        </div>,
+      ]}
+      customMainContainerRight={[
+        <img src="https://images.gamebanana.com/img/ss/mods/62fbda8a4e77e.jpg" alt="Image" style={{ marginRight: '10px', width: '50px', height: 'auto' }} />,
+        <div style={{ width: "12%" }}>
+          <div>Right Side</div>
+        </div>,
+      ]}
+    />
+  ),
+
+  name: "Custom mains containers",
+};
+
 export const CustomControlsSection = {
   render: () => (
     <AudioPlayer
@@ -89,9 +128,6 @@ export const MoveVolumeControlToProgressBarSection = {
     <AudioPlayer
       src={SAMPLE_MP3_URL}
       customProgressBarSection={[
-        RHAP_UI.CURRENT_TIME,
-        <div>/</div>,
-        RHAP_UI.DURATION,
         RHAP_UI.PROGRESS_BAR,
         RHAP_UI.VOLUME,
       ]}
@@ -106,9 +142,9 @@ export const UseCurrentLeftTime = {
   render: () => (
     <AudioPlayer
       src={SAMPLE_MP3_URL}
-      customProgressBarSection={[
+      customProgressBarSectionAbove={[
         RHAP_UI.CURRENT_TIME,
-        RHAP_UI.PROGRESS_BAR,
+        RHAP_UI.PROGRESS_DIV,
         RHAP_UI.CURRENT_LEFT_TIME,
       ]}
     />
